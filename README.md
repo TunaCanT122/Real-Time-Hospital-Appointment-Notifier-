@@ -22,7 +22,7 @@ An automated web-scraping bot that monitors the **Wanfang Hospital** appointment
 
 -----
 
-## 📦 Installation
+## 📦 Installation (Have not tried, might not work, AI-generated installation steps, follow steps at your own risk)
 
 1.  **Clone the Repository**
 
@@ -72,7 +72,7 @@ python "Hospital Appointment Notifier.py"
 The bot will:
 
 1.  Log into Discord.
-2.  Open a headless (or windowed) Chrome instance.
+2.  Open a Chrome instance.
 3.  Navigate to the Wanfang Hospital registration page.
 4.  Cycle through the date buttons provided in `date_button_ids`.
 5.  If an appointment button (`.btn-large`) is found, it pings the specified Discord channel.
