@@ -79,17 +79,6 @@ The bot will:
 
 -----
 
-## ⚠️ Troubleshooting
-
-**NoSuchDriverException?**
-If you encounter a `NoSuchDriverException`, ensure:
-
-1.  You are using the latest version of Selenium: `pip install --upgrade selenium`.
-2.  Chrome is installed in its default location.
-3.  You are not blocking the script with a Firewall or Antivirus.
-
------
-
 ## 📜 Disclaimer
 
 This project is for **educational purposes only**. Please be mindful of the website's `robots.txt` and Terms of Service. Frequent scraping may result in an IP ban. Use responsibly.
