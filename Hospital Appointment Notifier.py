@@ -2,19 +2,27 @@ import discord
 from discord.ext import tasks
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import asyncio
 
-API = 'YOUR_API_HERE' # Remove the { } brackets
-CHANNEL_ID = 'YOUR_CHANNEL_ID_HERE'  # You need the ID of the channel where the bot should post
+API = 'MTM2MzU1ODMy...1PxybNuyzS4yV8' #Redacted in string data type
+CHANNEL_ID = 1500...88055  # Channel ID of Discord chat server. Redacted. in int data type 
+
+from selenium.webdriver.chrome.options import Options
 
 class AppointmentBot(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Initialize the driver once
-        self.driver = webdriver.Chrome() 
+        
+        # Set up options to silence the noise
+        options = Options()
+        options.add_experimental_option('excludeSwitches', ['enable-logging']) 
+        options.add_argument('--log-level=3') # Only show fatal errors
+        
+        self.driver = webdriver.Chrome(options=options) 
 
     async def setup_hook(self):
         # Start the background scraping task
@@ -28,9 +36,14 @@ class AppointmentBot(discord.Client):
         # This function runs every 60 seconds automatically
         print("Checking for appointments...")
         try:
-            self.driver.get("https://wwww.wanfang.gov.tw/reg/register_ec_cload2.aspx?pidm=E3F7A20668DEB951D52D97CA8F059AA2")
+            self.driver.get("https://wwww.wanfang.gov.tw/reg/register_ec_cload2.aspx?pidm=E3F7A20668DEB951D52D97CA8F059AA2") # example link
             
-            date_button_ids = ["ContentPlaceHolder1_ButtonDate1", "ContentPlaceHolder1_ButtonDate2"]
+            date_button_ids = [
+            "ContentPlaceHolder1_ButtonDate1",
+            "ContentPlaceHolder1_ButtonDate2",
+            "ContentPlaceHolder1_ButtonDate3",
+            "ContentPlaceHolder1_ButtonDate4"
+            ]
             
             for button_id in date_button_ids:
                 try:
@@ -48,10 +61,11 @@ class AppointmentBot(discord.Client):
                             await channel.send(f"Appointment Found: {target.text}")
                             
                 except Exception as e:
-                    print(f"Error clicking {button_id}: {e}")
-                    
+                    print(f"❌ Failed to click on {button_id}: {e}")
+            
         except Exception as e:
             print(f"Scraper encountered an error: {e}")
+        print("✅ Waiting 60 seconds before next loop...\n")        
 
 intents = discord.Intents.default()
 client = AppointmentBot(intents=intents)
