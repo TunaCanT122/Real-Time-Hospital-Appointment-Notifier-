@@ -22,25 +22,11 @@ An automated web-scraping bot that monitors the **Wanfang Hospital** appointment
 
 -----
 
-## 📦 Installation (Have not tried, might not work, AI-generated installation steps, follow steps at your own risk)
+## ✨ Result
 
-1.  **Clone the Repository**
+1.  **Video Demo**
 
-    ```bash
-    git clone https://github.com/yourusername/hospital-appointment-notifier.git
-    cd hospital-appointment-notifier
-    ```
-
-2.  **Install Dependencies**
-
-    ```bash
-    pip install discord.py selenium beautifulsoup4 requests
-    ```
-
-3.  **WebDriver Setup**
-
-      * Ensure you have [Google Chrome](https://www.google.com/chrome/) installed.
-      * The script uses **Selenium Manager** (available in Selenium 4.6+), which downloads the driver automatically. If using an older version, place `chromedriver.exe` in the project root.
+    [![Watch the video]](https://youtu.be/L5bApQqDMNc)
 
 -----
 
