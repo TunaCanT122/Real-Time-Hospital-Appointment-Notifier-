@@ -26,7 +26,7 @@ An automated web-scraping bot that monitors the **Wanfang Hospital** appointment
 
 1.  **Video Demo**
 
-    [![Watch the video]](https://youtu.be/L5bApQqDMNc)
+    [Watch the video](https://youtu.be/L5bApQqDMNc)
 
 -----
 
@@ -47,7 +47,7 @@ URL = "https://wwww.wanfang.gov.tw/..."
 
 -----
 
-## 🖥️ Usage
+## 🖥️ Methodology 
 
 Run the script using Python:
 
